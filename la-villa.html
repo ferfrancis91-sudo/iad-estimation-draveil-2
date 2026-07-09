@@ -7,7 +7,7 @@
 <meta name="description" content="Estimez gratuitement votre maison dans le quartier de La Villa à Draveil avec Francis Fernandes, conseiller iad indépendant du secteur.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
 <style>
   :root{
     --iad-blue:#0B5FFF; --iad-blue-2:#2E7BFF; --iad-navy:#071B42; --iad-navy-2:#0D2A5C;
@@ -104,10 +104,16 @@
   .heritage-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;}
   .heritage-grid h2{color:#fff;}
   .heritage-grid p{color:rgba(255,255,255,.72);margin-bottom:14px;}
+  .heritage-text-anim{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:1.28rem;line-height:1.6;color:rgba(255,255,255,.92);min-height:230px;}
   .heritage-facts{list-style:none;display:flex;flex-direction:column;gap:16px;}
-  .heritage-facts li{display:flex;gap:14px;align-items:flex-start;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:16px 18px;}
+  .heritage-facts li{display:flex;gap:14px;align-items:flex-start;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:16px 18px;opacity:0;transform:translateX(16px);transition:opacity .5s ease, transform .5s ease;}
+  .heritage-facts li.in-seq{opacity:1;transform:translateX(0);}
   .heritage-facts .yr{font-family:'Sora',sans-serif;font-weight:800;color:var(--gold-2);min-width:64px;}
   .heritage-facts span{color:rgba(255,255,255,.8);font-size:.9rem;}
+  .villa-photo-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:28px;}
+  .vpg-card{border-radius:16px;overflow:hidden;height:220px;box-shadow:0 16px 36px -18px rgba(0,0,0,.55);}
+  .vpg-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+  .vpg-card:hover img{transform:scale(1.06);}
 
   .ville-mood{position:relative;height:440px;overflow:hidden;background:var(--iad-navy);}
   .ville-mood-caption{
@@ -327,14 +333,13 @@
 
 <section class="heritage-band" id="quartier">
   <div class="wrap">
-    <div class="heritage-grid">
+    <div class="heritage-grid" id="heritage-anim-trigger">
       <div>
         <span class="eyebrow" style="color:var(--gold-2);">Un peu d'histoire</span>
         <h2>Le tout premier lotissement de Draveil</h2>
-        <p>Formé sur les terres de l'ancienne ferme de Beaumont, le quartier de La Villa est loti dès 1868 par sa propriétaire, Mme de Belleyme. L'ouverture du pont de Juvisy en 1894 donne un essor décisif à sa construction : les grandes villas en pierre meulière, ornées de céramique, avec leurs parcs, apparaissent alors le long des avenues de Bellevue, des Ormes et du quai des Dames.</p>
-        <p>Un syndicat de propriétaires est créé dès 1897 pour entretenir les voies — signe d'un quartier organisé et prisé depuis plus d'un siècle.</p>
+        <p class="heritage-text-anim" id="heritage-typewriter"></p>
       </div>
-      <ul class="heritage-facts reveal">
+      <ul class="heritage-facts" id="heritage-dates">
         <li><span class="yr">1868</span><span>Premier plan de lotissement sur les terres de la ferme de Beaumont</span></li>
         <li><span class="yr">1894</span><span>Ouverture du pont de Juvisy, essor décisif de la construction</span></li>
         <li><span class="yr">1897</span><span>Création du syndicat des propriétaires de la Villa-Draveil</span></li>
@@ -350,6 +355,12 @@
         <img src="images/la-villa-boulevard-des-ormes.jpg" alt="Boulevard des Ormes, La Villa Draveil, carte postale ancienne">
         <div class="vh-tag">Boulevard des Ormes, vers 1910</div>
       </div>
+    </div>
+    <div class="villa-photo-gallery reveal">
+      <div class="vpg-card"><img src="images/la-villa-meuliere-1.jpg" alt="Maisons meulières typiques du quartier La Villa à Draveil"></div>
+      <div class="vpg-card"><img src="images/la-villa-meuliere-2.jpg" alt="Villa en pierre meulière avec portail en fer forgé, La Villa à Draveil"></div>
+      <div class="vpg-card"><img src="images/la-villa-meuliere-3.jpg" alt="Grande villa bourgeoise du quartier La Villa à Draveil"></div>
+      <div class="vpg-card"><img src="images/la-villa-meuliere-4.jpg" alt="Villa en pierre meulière et brique, quartier La Villa à Draveil"></div>
     </div>
   </div>
 </section>
@@ -429,12 +440,12 @@
       <div class="testi">
         <div class="stars">★★★★★</div>
         <p>"Disponible, réactif, et un vrai suivi jusqu'à la signature. Rien à redire."</p>
-        <div class="who"><div class="avatar">SL</div><div><strong>S. Lefèvre</strong><span>Vente à Montgeron</span></div></div>
+        <div class="who"><div class="avatar">SL</div><div><strong>S. Lefèvre</strong><span>Vente à Draveil</span></div></div>
       </div>
       <div class="testi">
         <div class="stars">★★★★★</div>
         <p>"Un accompagnement clair du début à la fin, on sentait l'appui d'un vrai réseau derrière."</p>
-        <div class="who"><div class="avatar">JD</div><div><strong>J. Dubois</strong><span>Vente à Vigneux-sur-Seine</span></div></div>
+        <div class="who"><div class="avatar">JD</div><div><strong>J. Dubois</strong><span>Vente à Draveil</span></div></div>
       </div>
     </div>
   </div>
@@ -558,6 +569,51 @@
   } else {
     revealEls.forEach(el=>el.classList.add('in-view'));
   }
+
+  (function(){
+    var fullText = "Formé sur les terres de l'ancienne ferme de Beaumont, le quartier de La Villa est loti dès 1868 par sa propriétaire, Mme de Belleyme. L'ouverture du pont de Juvisy en 1894 donne un essor décisif à sa construction : les grandes villas en pierre meulière, ornées de céramique, avec leurs parcs, apparaissent alors le long des avenues de Bellevue, des Ormes et du quai des Dames. Un syndicat de propriétaires est créé dès 1897 pour entretenir les voies — signe d'un quartier organisé et prisé depuis plus d'un siècle.";
+    var typewriterEl = document.getElementById('heritage-typewriter');
+    var dateItems = document.querySelectorAll('#heritage-dates li');
+    var trigger = document.getElementById('heritage-anim-trigger');
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var played = false;
+
+    function runHeritageAnim(){
+      if(played) return;
+      played = true;
+      if(reduceMotion){
+        typewriterEl.textContent = fullText;
+        dateItems.forEach(function(li){ li.classList.add('in-seq'); });
+        return;
+      }
+      var i = 0;
+      function typeChar(){
+        if(i <= fullText.length){
+          typewriterEl.textContent = fullText.slice(0, i);
+          i++;
+          setTimeout(typeChar, 16);
+        }
+      }
+      typeChar();
+      dateItems.forEach(function(li, idx){
+        setTimeout(function(){ li.classList.add('in-seq'); }, 500 + idx * 550);
+      });
+    }
+
+    if(trigger && 'IntersectionObserver' in window){
+      var heritageIo = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if(entry.isIntersecting){
+            runHeritageAnim();
+            heritageIo.unobserve(entry.target);
+          }
+        });
+      }, {threshold:.35});
+      heritageIo.observe(trigger);
+    } else if(trigger){
+      runHeritageAnim();
+    }
+  })();
 
   var LEAD_ENDPOINT_URL = 'https://script.google.com/macros/s/AKfycbye0uOjF8Lp_h4I1aSa2MQ4KW0VqwVczctExPt988LNm0Vad4R7pAmwHIPBg2SVTwSf/exec';
   var leadForm = document.getElementById('leadForm');
