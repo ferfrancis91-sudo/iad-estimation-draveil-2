@@ -3,13 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Estimation immobilière gratuite à Draveil | Francis Fernandes - Conseiller iad</title>
-<meta name="description" content="Estimez gratuitement votre bien à Draveil (La Villa, Mainville, Champrosay, Paris-Jardins) et dans les communes voisines avec Francis Fernandes, conseiller iad indépendant.">
+<title>Estimation immobilière gratuite à Soisy-sur-Seine | Francis Fernandes - Conseiller iad</title>
+<meta name="description" content="Estimez gratuitement votre maison ou appartement à Soisy-sur-Seine avec Francis Fernandes, conseiller iad indépendant présent sur le secteur.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-
   :root{
     --iad-blue:#0B5FFF; --iad-blue-2:#2E7BFF; --iad-navy:#071B42; --iad-navy-2:#0D2A5C;
     --iad-tint:#EAF2FF; --iad-tint-2:#F5F9FF; --gold:#F2A93B; --gold-2:#F7C978;
@@ -48,23 +47,74 @@
   .logo small{display:block;font-family:'Inter',sans-serif;font-weight:500;font-size:.62rem;color:var(--ink-soft);letter-spacing:.04em;}
   nav.links{display:flex;gap:22px;font-weight:600;font-size:.84rem;flex-wrap:wrap;}
   nav.links a{color:var(--ink-soft);transition:color .2s;}
-  nav.links a:hover, nav.links a.active{color:var(--iad-blue);}
+  nav.links a:hover{color:var(--iad-blue);}
   .btn{display:inline-flex;align-items:center;gap:8px;background:var(--iad-blue);color:#fff;font-weight:700;font-size:.9rem;padding:12px 22px;border-radius:100px;border:none;cursor:pointer;box-shadow:0 10px 24px -8px rgba(11,95,255,.55);transition:transform .2s, box-shadow .2s;}
   .btn:hover{transform:translateY(-2px);box-shadow:0 14px 30px -8px rgba(11,95,255,.65);}
   .btn.ghost{background:transparent;color:var(--iad-navy);border:1.5px solid var(--line);box-shadow:none;}
   .btn.ghost:hover{border-color:var(--iad-blue);color:var(--iad-blue);}
 
+  .hero{position:relative;overflow:hidden;background:var(--iad-tint-2);padding:72px 0 110px;}
+  .hero::before{content:"";position:absolute;top:-160px;right:-120px;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle at 30% 30%, #DCEBFF 0%, rgba(220,235,255,0) 70%);animation:blobMove 14s ease-in-out infinite;pointer-events:none;}
+  .hero::after{content:"";position:absolute;bottom:-200px;left:-140px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle at 60% 40%, rgba(11,95,255,.08) 0%, rgba(11,95,255,0) 70%);animation:blobMove 18s ease-in-out infinite reverse;pointer-events:none;}
+  .hero-watermark{position:absolute;top:0;right:0;width:58%;height:100%;background-image:url('images/soisy-chateau-grand-veneur-etang.jpg');background-size:cover;background-position:center;opacity:.3;filter:grayscale(.6) contrast(1.05);-webkit-mask-image:linear-gradient(to left, black 45%, transparent 95%);mask-image:linear-gradient(to left, black 45%, transparent 95%);pointer-events:none;}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;}
+  .hero h1{font-size:clamp(2.2rem,4.2vw,3.4rem);font-weight:800;color:var(--iad-navy);line-height:1.08;margin:16px 0 20px;}
+  .hero h1 span{color:var(--iad-blue);}
+  .hero p.lead{font-size:1.08rem;color:var(--ink-soft);max-width:480px;margin-bottom:28px;}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:36px;}
+  .trust-strip{display:flex;gap:28px;flex-wrap:wrap;padding-top:24px;border-top:1px solid var(--line);}
+  .trust-item{display:flex;flex-direction:column;}
+  .trust-item strong{font-family:'Sora',sans-serif;font-size:1.35rem;color:var(--iad-navy);}
+  .trust-item span{font-size:.78rem;color:var(--ink-soft);}
+
+  .sim-card{position:relative;background:linear-gradient(160deg,var(--iad-navy) 0%, var(--iad-navy-2) 55%, var(--iad-blue) 130%);background-size:200% 200%;border-radius:24px;padding:34px;color:#fff;box-shadow:var(--shadow);animation:floatY 6s ease-in-out infinite, gradientShift 10s ease infinite;}
+  .sim-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;}
+  .sim-head h3{font-size:1.05rem;font-weight:700;}
+  .sim-head .pill{background:rgba(255,255,255,.14);font-size:.68rem;font-weight:700;padding:5px 12px;border-radius:100px;letter-spacing:.05em;}
+  .sim-field{margin-bottom:16px;}
+  .sim-field label{display:block;font-size:.76rem;color:rgba(255,255,255,.7);margin-bottom:6px;font-weight:600;}
+  .sim-field select, .sim-field input{width:100%;padding:13px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.08);color:#fff;font-size:.95rem;font-family:'Inter',sans-serif;}
+  .sim-field input::placeholder{color:rgba(255,255,255,.45);}
+  .sim-result-range{margin-top:22px;background:rgba(255,255,255,.1);border-radius:16px;padding:20px;}
+  .sim-range-label{font-size:.68rem;color:rgba(255,255,255,.65);margin-bottom:10px;}
+  .sim-range-values{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;gap:8px;}
+  .sim-range-values .big-low, .sim-range-values .big-high{font-family:'Sora',sans-serif;font-size:1.5rem;font-weight:800;}
+  .sim-range-values .big-high{color:var(--gold-2);}
+  .sim-range-values .range-sep{font-size:.75rem;color:rgba(255,255,255,.5);}
+  .sim-range-bar{height:6px;border-radius:100px;background:linear-gradient(90deg,var(--iad-blue-2),var(--gold));margin-bottom:14px;}
+  .sim-result-range .sim-note{margin:0 0 18px;text-align:left;}
+  .sim-note{font-size:.68rem;color:rgba(255,255,255,.55);margin-top:14px;text-align:center;}
+  .sim-cta-wrap{position:relative;}
+  .sim-cta-pulse{display:flex;width:100%;justify-content:center;background:#fff;color:var(--iad-navy);box-shadow:none;animation:simCtaPulse 1.8s ease-in-out infinite;}
+  @keyframes simCtaPulse{0%{box-shadow:0 0 0 0 rgba(255,255,255,.55);transform:scale(1);}70%{box-shadow:0 0 0 14px rgba(255,255,255,0);transform:scale(1.03);}100%{box-shadow:0 0 0 0 rgba(255,255,255,0);transform:scale(1);}}
+  .sim-cursor{position:absolute;top:34px;left:58%;filter:drop-shadow(0 2px 4px rgba(0,0,0,.5));animation:simCursorTap 1.8s ease-in-out infinite;transform-origin:20% 20%;pointer-events:none;}
+  @keyframes simCursorTap{0%{transform:translate(0,0) scale(1);opacity:1;}15%{transform:translate(-6px,-4px) scale(.92);opacity:1;}30%{transform:translate(0,0) scale(1);opacity:1;}75%{transform:translate(0,0) scale(1);opacity:1;}85%{transform:translate(-6px,-4px) scale(.92);opacity:.7;}100%{transform:translate(0,0) scale(1);opacity:1;}}
+  @media (prefers-reduced-motion: reduce){ .sim-cta-pulse{animation:none;} .sim-cursor{animation:none;} }
+
   section{padding:88px 0;}
-  .section-head{max-width:660px;margin:0 auto 56px;text-align:center;}
+  .section-head{max-width:640px;margin:0 auto 56px;text-align:center;}
   .section-head h2{font-size:clamp(1.7rem,3vw,2.3rem);color:var(--iad-navy);margin-top:10px;}
   .section-head p{color:var(--ink-soft);margin-top:12px;}
-
   .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
   .pillar{background:var(--iad-tint-2);border:1px solid var(--line);border-radius:var(--radius);padding:32px 28px;transition:transform .25s, box-shadow .25s;}
   .pillar:hover{transform:translateY(-6px);box-shadow:var(--shadow);background:#fff;}
   .pillar .ic{width:52px;height:52px;border-radius:14px;background:var(--iad-blue);color:#fff;display:flex;align-items:center;justify-content:center;margin-bottom:18px;}
   .pillar h3{font-size:1.1rem;color:var(--iad-navy);margin-bottom:10px;}
   .pillar p{color:var(--ink-soft);font-size:.92rem;}
+
+  .ville-mood{position:relative;height:440px;overflow:hidden;background:var(--iad-navy);}
+  .ville-mood-caption{position:absolute;top:0;left:0;right:0;z-index:2;padding:32px 36px 70px;background:linear-gradient(180deg, rgba(7,27,66,.92) 0%, rgba(7,27,66,.5) 55%, transparent 100%);pointer-events:none;}
+  .ville-mood-caption p{color:#fff;font-size:1.1rem;font-family:'Sora',sans-serif;font-weight:600;max-width:560px;margin-top:8px;}
+  .marquee-track{position:absolute;top:0;left:0;height:100%;display:flex;gap:12px;animation:marqueeScroll 26s linear infinite;will-change:transform;}
+  .marquee-track img{height:100%;width:400px;object-fit:cover;flex-shrink:0;filter:brightness(.85) sepia(.1);}
+  @keyframes marqueeScroll{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
+  @media (prefers-reduced-motion: reduce){ .marquee-track{animation:none;} }
+  @media (max-width:640px){ .ville-mood{height:260px;} .marquee-track img{width:260px;} }
+
+  .quality-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
+  .quality-card{background:var(--iad-tint-2);border:1px solid var(--line);border-radius:16px;padding:26px 22px;}
+  .quality-card h3{color:var(--iad-navy);font-size:1.02rem;margin-bottom:8px;}
+  .quality-card p{color:var(--ink-soft);font-size:.88rem;}
 
   .about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center;}
   .about-photo{position:relative;justify-self:center;}
@@ -77,6 +127,12 @@
   .about-contact a, .about-contact span{display:flex;align-items:center;gap:8px;font-size:.9rem;font-weight:600;color:var(--iad-navy);}
   .about-contact a:hover{color:var(--iad-blue);}
 
+  .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+  .step{position:relative;padding-top:8px;}
+  .step .num{font-family:'Sora',sans-serif;font-weight:800;font-size:2.4rem;-webkit-text-stroke:1.5px var(--iad-blue);color:transparent;}
+  .step h3{color:var(--iad-navy);font-size:1rem;margin:10px 0 8px;}
+  .step p{font-size:.88rem;color:var(--ink-soft);}
+
   .propertips-card{background:linear-gradient(120deg,var(--iad-navy),var(--iad-navy-2) 60%,var(--iad-blue));border-radius:28px;color:#fff;padding:56px;display:grid;grid-template-columns:1.3fr .7fr;gap:48px;align-items:center;}
   .propertips-text h2{font-size:clamp(1.5rem,2.6vw,2rem);margin:10px 0 14px;}
   .propertips-text p{color:rgba(255,255,255,.75);max-width:520px;margin-bottom:22px;}
@@ -87,7 +143,17 @@
   .propertips-qr img{width:170px;height:170px;border-radius:8px;margin:0 auto;}
   .propertips-qr span{display:block;color:var(--iad-navy);font-size:.72rem;font-weight:600;margin-top:12px;max-width:170px;}
 
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .testi{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:0 10px 30px -20px rgba(11,31,90,.25);}
+  .stars{color:var(--gold);letter-spacing:2px;margin-bottom:14px;font-size:.95rem;}
+  .testi p{font-size:.93rem;color:var(--ink-soft);margin-bottom:18px;}
+  .testi .who{display:flex;align-items:center;gap:12px;}
+  .avatar{width:38px;height:38px;border-radius:50%;background:var(--iad-tint);color:var(--iad-blue);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:.85rem;}
+  .who strong{display:block;font-size:.88rem;color:var(--iad-navy);}
+  .who span{font-size:.75rem;color:var(--ink-soft);}
+
   .cta-final{background:linear-gradient(120deg,var(--iad-blue),var(--iad-navy) 70%);border-radius:28px;color:#fff;padding:64px 48px;text-align:center;margin:0 24px;position:relative;overflow:hidden;}
+  .cta-final::before{content:"";position:absolute;inset:0;background-image:url('images/soisy-chateau-grand-veneur-parc.jpg');background-size:cover;background-position:center;opacity:.3;filter:grayscale(.3);mask-image:radial-gradient(circle at 80% 20%, black 0%, transparent 75%);-webkit-mask-image:radial-gradient(circle at 80% 20%, black 0%, transparent 75%);pointer-events:none;}
   .cta-final > *{position:relative;z-index:1;}
   .cta-final h2{font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:14px;}
   .cta-final p{color:rgba(255,255,255,.75);max-width:520px;margin:0 auto 30px;}
@@ -106,11 +172,10 @@
   @media (max-width:640px){ .lead-row{grid-template-columns:1fr;} }
 
   footer{background:var(--iad-navy);color:rgba(255,255,255,.6);padding:56px 0 28px;font-size:.85rem;}
-  .foot-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr 1fr;gap:28px;margin-bottom:40px;}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px;margin-bottom:40px;}
   .foot-grid h4{color:#fff;font-size:.85rem;margin-bottom:14px;}
   .foot-grid a{display:block;color:rgba(255,255,255,.55);margin-bottom:9px;transition:color .2s;}
   .foot-grid a:hover{color:var(--gold-2);}
-  .foot-grid span.disabled{display:block;color:rgba(255,255,255,.32);margin-bottom:9px;}
   .foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:22px;font-size:.75rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
   .foot-legal{color:rgba(255,255,255,.4);max-width:900px;line-height:1.7;}
 
@@ -123,112 +188,18 @@
   .float-stack a{position:relative;}
   .float-stack a:hover .float-label{opacity:1;transform:translateX(0);}
 
-  .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
-  .step{position:relative;padding-top:8px;}
-  .step .num{font-family:'Sora',sans-serif;font-weight:800;font-size:2.4rem;-webkit-text-stroke:1.5px var(--iad-blue);color:transparent;}
-  .step h3{color:var(--iad-navy);font-size:1rem;margin:10px 0 8px;}
-  .step p{font-size:.88rem;color:var(--ink-soft);}
-
   @media (max-width: 980px){
-    .pillars{grid-template-columns:1fr;}
-    .process-grid{grid-template-columns:repeat(2,1fr);}
+    .hero-grid{grid-template-columns:1fr;} .pillars{grid-template-columns:1fr;}
+    .process-grid{grid-template-columns:repeat(2,1fr);} .testi-grid{grid-template-columns:1fr;}
     .foot-grid{grid-template-columns:1fr 1fr;} nav.links{display:none;}
     .about-grid{grid-template-columns:1fr;text-align:center;} .about-contact{justify-content:center;}
     .propertips-card{grid-template-columns:1fr;padding:36px 28px;text-align:center;} .pt-steps{align-items:center;}
     .quality-grid{grid-template-columns:1fr;}
   }
-
-  .hero{position:relative;overflow:hidden;background:var(--iad-tint-2);padding:72px 0 110px;}
-  .hero::before{content:"";position:absolute;top:-160px;right:-120px;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle at 30% 30%, #DCEBFF 0%, rgba(220,235,255,0) 70%);animation:blobMove 14s ease-in-out infinite;pointer-events:none;}
-  .hero::after{content:"";position:absolute;bottom:-200px;left:-140px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle at 60% 40%, rgba(11,95,255,.08) 0%, rgba(11,95,255,0) 70%);animation:blobMove 18s ease-in-out infinite reverse;pointer-events:none;}
-  .hero-watermark{position:absolute;top:0;right:0;width:58%;height:100%;background-size:cover;background-position:center;opacity:.3;filter:grayscale(.6) contrast(1.05);-webkit-mask-image:linear-gradient(to left, black 45%, transparent 95%);mask-image:linear-gradient(to left, black 45%, transparent 95%);pointer-events:none;}
-  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;}
-  .hero h1{font-size:clamp(2.2rem,4.2vw,3.4rem);font-weight:800;color:var(--iad-navy);line-height:1.08;margin:16px 0 20px;}
-  .hero h1 span{color:var(--iad-blue);}
-  .hero p.lead{font-size:1.08rem;color:var(--ink-soft);max-width:480px;margin-bottom:28px;}
-  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:36px;}
-  .trust-strip{display:flex;gap:28px;flex-wrap:wrap;padding-top:24px;border-top:1px solid var(--line);}
-  .trust-item{display:flex;flex-direction:column;}
-  .trust-item strong{font-family:'Sora',sans-serif;font-size:1.35rem;color:var(--iad-navy);}
-  .trust-item span{font-size:.78rem;color:var(--ink-soft);}
-  .sim-card{position:relative;background:linear-gradient(160deg,var(--iad-navy) 0%, var(--iad-navy-2) 55%, var(--iad-blue) 130%);background-size:200% 200%;border-radius:24px;padding:34px;color:#fff;box-shadow:var(--shadow);animation:floatY 6s ease-in-out infinite, gradientShift 10s ease infinite;}
-  .sim-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;}
-  .sim-head h3{font-size:1.05rem;font-weight:700;}
-  .sim-head .pill{background:rgba(255,255,255,.14);font-size:.68rem;font-weight:700;padding:5px 12px;border-radius:100px;letter-spacing:.05em;}
-  .sim-field{margin-bottom:16px;}
-  .sim-field label{display:block;font-size:.76rem;color:rgba(255,255,255,.7);margin-bottom:6px;font-weight:600;}
-  .sim-field select, .sim-field input{width:100%;padding:13px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.08);color:#fff;font-size:.95rem;font-family:'Inter',sans-serif;}
-  .sim-field select option{color:#0B1220;}
-  .sim-field input::placeholder{color:rgba(255,255,255,.45);}
-  .sim-note{font-size:.68rem;color:rgba(255,255,255,.55);margin-top:14px;text-align:center;}
-  .sim-result-range{margin-top:22px;background:rgba(255,255,255,.1);border-radius:16px;padding:20px;}
-  .sim-range-label{font-size:.68rem;color:rgba(255,255,255,.65);margin-bottom:10px;}
-  .sim-range-values{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;gap:8px;}
-  .sim-range-values .big-low, .sim-range-values .big-high{font-family:'Sora',sans-serif;font-size:1.5rem;font-weight:800;}
-  .sim-range-values .big-high{color:var(--gold-2);}
-  .sim-range-values .range-sep{font-size:.75rem;color:rgba(255,255,255,.5);}
-  .sim-range-bar{height:6px;border-radius:100px;background:linear-gradient(90deg,var(--iad-blue-2),var(--gold));margin-bottom:14px;}
-  .sim-result-range .sim-note{margin:0 0 18px;text-align:left;}
-  .sim-cta-wrap{position:relative;}
-  .sim-cta-pulse{display:flex;width:100%;justify-content:center;background:#fff;color:var(--iad-navy);box-shadow:none;animation:simCtaPulse 1.8s ease-in-out infinite;}
-  @keyframes simCtaPulse{0%{box-shadow:0 0 0 0 rgba(255,255,255,.55);transform:scale(1);}70%{box-shadow:0 0 0 14px rgba(255,255,255,0);transform:scale(1.03);}100%{box-shadow:0 0 0 0 rgba(255,255,255,0);transform:scale(1);}}
-  .sim-cursor{position:absolute;top:34px;left:58%;filter:drop-shadow(0 2px 4px rgba(0,0,0,.5));animation:simCursorTap 1.8s ease-in-out infinite;transform-origin:20% 20%;pointer-events:none;}
-  @keyframes simCursorTap{0%{transform:translate(0,0) scale(1);opacity:1;}15%{transform:translate(-6px,-4px) scale(.92);opacity:1;}30%{transform:translate(0,0) scale(1);opacity:1;}75%{transform:translate(0,0) scale(1);opacity:1;}85%{transform:translate(-6px,-4px) scale(.92);opacity:.7;}100%{transform:translate(0,0) scale(1);opacity:1;}}
-  @media (prefers-reduced-motion: reduce){ .sim-cta-pulse{animation:none;} .sim-cursor{animation:none;} }
-
-  .ville-mood{position:relative;height:440px;overflow:hidden;background:var(--iad-navy);}
-  .ville-mood-caption{position:absolute;top:0;left:0;right:0;z-index:2;padding:32px 36px 70px;background:linear-gradient(180deg, rgba(7,27,66,.92) 0%, rgba(7,27,66,.5) 55%, transparent 100%);pointer-events:none;}
-  .ville-mood-caption p{color:#fff;font-size:1.1rem;font-family:'Sora',sans-serif;font-weight:600;max-width:560px;margin-top:8px;}
-  .marquee-track{position:absolute;top:0;left:0;height:100%;display:flex;gap:12px;animation:marqueeScroll 24s linear infinite;will-change:transform;}
-  .marquee-track img{height:100%;width:400px;object-fit:cover;flex-shrink:0;filter:brightness(.85) sepia(.1);}
-  @keyframes marqueeScroll{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
-  @media (prefers-reduced-motion: reduce){ .marquee-track{animation:none;} }
-  @media (max-width:640px){ .ville-mood{height:260px;} .marquee-track img{width:260px;} }
-
-  .quartiers-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;}
-  .quartier-card{position:relative;border-radius:18px;overflow:hidden;height:260px;text-decoration:none;box-shadow:var(--shadow);}
-  .quartier-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
-  .quartier-card:hover img{transform:scale(1.08);}
-  .qcard-caption{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:20px;background:linear-gradient(0deg, rgba(0,0,0,.8) 0%, rgba(0,0,0,.05) 65%, transparent 100%);}
-  .qcard-caption h4{color:#fff;font-size:1.15rem;margin-bottom:4px;}
-  .qcard-caption span{color:rgba(255,255,255,.75);font-size:.8rem;}
-  @media (max-width:768px){ .quartiers-grid{grid-template-columns:1fr;} }
-
-  .feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;}
-  .feature-card{background:var(--iad-tint-2);border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px;transition:.25s;}
-  .feature-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);background:#fff;}
-  .feature-card .ic{width:48px;height:48px;border-radius:14px;background:var(--iad-blue);color:#fff;display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
-  .feature-card h3{color:var(--iad-navy);font-size:1.05rem;margin-bottom:8px;}
-  .feature-card p{color:var(--ink-soft);font-size:.88rem;margin-bottom:14px;}
-  .feature-card a{color:var(--iad-blue);font-weight:700;font-size:.85rem;}
-
-  /* SECTEURS ENVIRONNANTS */
-  .zones{background:var(--iad-navy);color:#fff;}
-  .zones .section-head h2{color:#fff;}
-  .zones .section-head p{color:rgba(255,255,255,.65);}
-  .zone-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px;}
-  .zone-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:24px 22px;transition:.25s;position:relative;}
-  a.zone-card{display:block;}
-  .zone-card:hover{background:rgba(255,255,255,.12);transform:translateY(-4px);}
-  .zone-card h4{font-size:1rem;margin-bottom:8px;}
-  .zone-card .price{font-family:'Sora',sans-serif;font-weight:800;font-size:1.4rem;color:var(--gold-2);}
-  .zone-card .unit{font-size:.7rem;color:rgba(255,255,255,.55);margin-top:2px;}
-  .zone-card.zone-external{border-color:var(--gold);background:rgba(242,169,59,.1);}
-  .zone-card .zone-tag{position:absolute;top:14px;right:14px;font-size:.6rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:var(--gold-2);}
-
-  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-  .testi{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:0 10px 30px -20px rgba(11,31,90,.25);}
-  .stars{color:var(--gold);letter-spacing:2px;margin-bottom:14px;font-size:.95rem;}
-  .testi p{font-size:.93rem;color:var(--ink-soft);margin-bottom:18px;}
-  .testi .who{display:flex;align-items:center;gap:12px;}
-  .avatar{width:38px;height:38px;border-radius:50%;background:var(--iad-tint);color:var(--iad-blue);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:.85rem;}
-  .who strong{display:block;font-size:.88rem;color:var(--iad-navy);}
-  .who span{font-size:.75rem;color:var(--ink-soft);}
-
-  @media (max-width:980px){ .hero-grid{grid-template-columns:1fr;} .testi-grid{grid-template-columns:1fr;} }
 </style>
 </head>
-<body data-source="site iad Francis Fernandes - Draveil">
+<body data-source="site iad Francis Fernandes - Soisy-sur-Seine">
+
 <header>
   <div class="nav wrap">
     <a href="index.html" class="logo">
@@ -236,50 +207,40 @@
       <div>iad <small>FRANCIS FERNANDES · CONSEILLER</small></div>
     </a>
     <nav class="links">
-      <a href="index.html" class="active">Accueil</a>
-      <a href="index.html#quartiers">Quartiers</a>
+      <a href="index.html">Accueil</a>
       <a href="index.html#secteurs">Communes voisines</a>
-      <a href="histoire-qualite-de-vie.html">Histoire & vie locale</a>
-      <a href="ecoles-carte-scolaire.html">Écoles & carte scolaire</a>
+      <a href="histoire-qualite-de-vie.html">Histoire &amp; vie locale</a>
+      <a href="ecoles-carte-scolaire.html">Écoles</a>
       <a href="calendrier.html">Agenda</a>
       <a href="carte-interactive.html">Carte interactive</a>
     </nav>
-    <a href="index.html#simulateur" class="btn">Estimer mon bien</a>
+    <a href="#simulateur" class="btn">Estimer mon bien</a>
   </div>
 </header>
 
 <section class="hero">
-  <div class="hero-watermark" style="background-image:url('images/draveil-chateau-moderne-1.jpg');"></div>
+  <div class="hero-watermark"></div>
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow reveal in-view">Conseiller iad · Draveil (91)</span>
-      <h1 class="reveal in-view">Votre bien à Draveil mérite une <span>estimation juste</span>, faite par un expert local.</h1>
-      <p class="lead reveal in-view">Francis Fernandes, conseiller iad indépendant installé à Draveil, vous accompagne avec la force du 1er réseau immobilier de France et une connaissance fine de chaque quartier — La Villa, Mainville, Champrosay, Paris-Jardins — et des communes voisines.</p>
+      <span class="eyebrow reveal in-view">Conseiller iad · Soisy-sur-Seine (91)</span>
+      <h1 class="reveal in-view">Votre bien à Soisy-sur-Seine mérite une <span>estimation juste</span>, faite par un expert local.</h1>
+      <p class="lead reveal in-view">Francis Fernandes, conseiller iad indépendant basé à Draveil, accompagne aussi les propriétaires de Soisy-sur-Seine : château du Grand Veneur, bords de Seine, lisière de la forêt de Sénart. La même méthode, la même exigence qu'à Draveil.</p>
       <div class="hero-cta reveal in-view">
         <a href="#simulateur" class="btn">Estimer gratuitement</a>
         <a href="https://wa.me/33616127718" class="btn ghost">Discuter sur WhatsApp</a>
       </div>
       <div class="trust-strip reveal in-view">
-        <div class="trust-item"><strong>28 833</strong><span>habitants à Draveil</span></div>
-        <div class="trust-item"><strong>4</strong><span>quartiers historiques</span></div>
+        <div class="trust-item"><strong>≈ 7 400</strong><span>habitants (Soiséens)</span></div>
+        <div class="trust-item"><strong>480 ha</strong><span>de forêt de Sénart à proximité</span></div>
         <div class="trust-item"><strong>1er</strong><span>réseau immobilier de France</span></div>
       </div>
     </div>
+
     <div class="sim-card reveal-scale in-view" id="simulateur">
       <div class="sim-head"><h3>Simulateur de prix au m²</h3><span class="pill">GRATUIT</span></div>
       <div class="sim-field">
-        <label>Votre commune</label>
-        <select id="commune">
-          <option value="3150" selected>Draveil</option>
-          <option value="3100">Vigneux-sur-Seine</option>
-          <option value="2300">Ris-Orangis</option>
-          <option value="3300">Juvisy-sur-Orge</option>
-          <option value="3305">Soisy-sur-Seine</option>
-        </select>
-      </div>
-      <div class="sim-field">
         <label>Surface habitable (m²)</label>
-        <input type="number" id="surface" placeholder="Ex : 100">
+        <input type="number" id="surface" placeholder="Ex : 90">
       </div>
       <div class="sim-result-range">
         <div class="sim-range-label">Fourchette d'estimation</div>
@@ -289,7 +250,7 @@
           <span class="big-high" id="resultat-haut">—</span>
         </div>
         <div class="sim-range-bar"></div>
-        <p class="sim-note" id="sim-note-text">Cette fourchette est indicative et dépend de l'état du bien, du terrain et de l'exposition. Francis affine ce chiffrage lors d'une visite.</p>
+        <p class="sim-note">Cette fourchette est indicative, basée sur les prix moyens constatés à Soisy-sur-Seine (≈ 3 305 €/m²) — une visite reste nécessaire pour un chiffrage précis.</p>
         <div class="sim-cta-wrap">
           <a href="#contact" class="btn sim-cta-pulse" id="affiner-btn">Affiner avec Francis</a>
           <svg class="sim-cursor" width="30" height="30" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2 L4 20 L9 15.5 L12.5 22 L15 20.5 L11.5 14 L18 14 Z" fill="#fff" stroke="var(--iad-navy)" stroke-width="1"/></svg>
@@ -301,39 +262,31 @@
 
 <section class="ville-mood">
   <div class="ville-mood-caption">
-    <span class="eyebrow" style="color:var(--gold-2);">Draveil, hier &amp; aujourd'hui</span>
-    <p>Du bourg ancien aux bords de Seine, en passant par le château et Champrosay.</p>
+    <span class="eyebrow" style="color:var(--gold-2);">Soisy-sur-Seine, hier &amp; aujourd'hui</span>
+    <p>Le château du Grand Veneur, l'église Notre-Dame et les bords de Seine.</p>
   </div>
   <div class="marquee-track">
-    <img src="images/draveil-chateau-moderne-1.jpg" alt="Château de Draveil aujourd'hui">
-    <img src="images/draveil-mairie-rue.jpg" alt="Mairie de Draveil, carte postale ancienne">
-    <img src="images/draveil-champrosay-grande-rue.jpg" alt="Champrosay, Grande Rue, carte postale ancienne">
-    <img src="images/paris-jardins-chateau-facade.jpg" alt="Château de Paris-Jardins à Draveil">
-    <img src="images/draveil-eglise-1.jpg" alt="Église de Draveil, carte postale ancienne">
-    <img src="images/la-villa-bords-de-seine.jpg" alt="La Villa Draveil, bords de Seine">
-    <img src="images/la-villa-boulevard-des-ormes.jpg" alt="Boulevard des Ormes, La Villa Draveil">
-    <img src="images/paris-jardins-etang-reflet.jpg" alt="Paris-Jardins, maison en meulière reflétée dans l'étang">
-    <img src="images/paris-jardins-maisons-alignees.jpg" alt="Paris-Jardins, alignement de pavillons à colombages">
-    <img src="images/paris-jardins-kiosque.jpg" alt="Paris-Jardins, kiosque en fonte du parc">
-    <img src="images/draveil-chateau-moderne-1.jpg" alt="" aria-hidden="true">
-    <img src="images/draveil-mairie-rue.jpg" alt="" aria-hidden="true">
-    <img src="images/draveil-champrosay-grande-rue.jpg" alt="" aria-hidden="true">
-    <img src="images/paris-jardins-chateau-facade.jpg" alt="" aria-hidden="true">
-    <img src="images/draveil-eglise-1.jpg" alt="" aria-hidden="true">
-    <img src="images/la-villa-bords-de-seine.jpg" alt="" aria-hidden="true">
-    <img src="images/la-villa-boulevard-des-ormes.jpg" alt="" aria-hidden="true">
-    <img src="images/paris-jardins-etang-reflet.jpg" alt="" aria-hidden="true">
-    <img src="images/paris-jardins-maisons-alignees.jpg" alt="" aria-hidden="true">
-    <img src="images/paris-jardins-kiosque.jpg" alt="" aria-hidden="true">
+    <img src="images/soisy-chateau-grand-veneur-etang.jpg" alt="Château du Grand Veneur à Soisy-sur-Seine, vue sur l'étang">
+    <img src="images/soisy-mairie.jpg" alt="Mairie de Soisy-sur-Seine">
+    <img src="images/soisy-eglise-notre-dame.jpg" alt="Église Notre-Dame de Soisy-sur-Seine">
+    <img src="images/soisy-boulevard-carte-postale.jpg" alt="Boulevard de Soisy-sur-Seine, carte postale ancienne">
+    <img src="images/soisy-pavillon-parc.jpg" alt="Pavillon dans le parc du château à Soisy-sur-Seine">
+    <img src="images/soisy-chateau-grand-veneur-parc.jpg" alt="Parc du château du Grand Veneur à Soisy-sur-Seine">
+    <img src="images/soisy-chateau-grand-veneur-etang.jpg" alt="" aria-hidden="true">
+    <img src="images/soisy-mairie.jpg" alt="" aria-hidden="true">
+    <img src="images/soisy-eglise-notre-dame.jpg" alt="" aria-hidden="true">
+    <img src="images/soisy-boulevard-carte-postale.jpg" alt="" aria-hidden="true">
+    <img src="images/soisy-pavillon-parc.jpg" alt="" aria-hidden="true">
+    <img src="images/soisy-chateau-grand-veneur-parc.jpg" alt="" aria-hidden="true">
   </div>
 </section>
 
 <section id="pourquoi">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">Pourquoi un conseiller iad</span>
+      <span class="eyebrow">Pourquoi un conseiller iad à Soisy</span>
       <h2>La puissance d'un grand réseau, la proximité d'un indépendant</h2>
-      <p>iad combine outils digitaux performants, visibilité nationale et accompagnement personnalisé par un conseiller qui connaît votre quartier.</p>
+      <p>iad combine outils digitaux performants, visibilité nationale et accompagnement personnalisé par un conseiller qui connaît votre secteur.</p>
     </div>
     <div class="pillars stagger">
       <div class="pillar">
@@ -349,13 +302,29 @@
       <div class="pillar">
         <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="14" rx="2" stroke="white" stroke-width="2"/><path d="M3 9h18M8 4v2M16 4v2" stroke="white" stroke-width="2"/></svg></div>
         <h3>Expertise du secteur</h3>
-        <p>La Villa, Mainville, Champrosay, Paris-Jardins et les communes voisines : une lecture fine et à jour des prix pratiqués rue par rue.</p>
+        <p>Autour du château du Grand Veneur, des bords de Seine et de la forêt de Sénart : une lecture fine des prix pratiqués à Soisy.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="apropos" style="background:var(--iad-tint-2);">
+<section style="background:var(--iad-tint-2);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Cadre de vie</span>
+      <h2>Soisy-sur-Seine, un village au bord de l'eau</h2>
+      <p>Une petite commune résidentielle et recherchée de l'Essonne, connue pour son patrimoine et son cadre naturel.</p>
+    </div>
+    <div class="quality-grid stagger">
+      <div class="quality-card"><h3>Château du Grand Veneur</h3><p>Un parc et un patrimoine remarquable au cœur de la commune, qui contribue au charme du village.</p></div>
+      <div class="quality-card"><h3>Forêt de Sénart</h3><p>480 hectares de forêt domaniale à proximité immédiate, un cadre naturel très recherché.</p></div>
+      <div class="quality-card"><h3>Bords de Seine</h3><p>Un cadre verdoyant en bord de fleuve, à quelques minutes de Draveil et Vigneux-sur-Seine.</p></div>
+      <div class="quality-card"><h3>Village résidentiel</h3><p>Maisons de caractère, pavillons avec jardin et une ambiance de village préservée.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="apropos">
   <div class="wrap">
     <div class="about-grid reveal">
       <div class="about-photo">
@@ -366,7 +335,7 @@
         <span class="eyebrow">Votre conseiller local</span>
         <h2>Francis Fernandes</h2>
         <p class="role">Agent mandataire iad — Essonne &amp; région Île-de-France</p>
-        <p class="lead" style="max-width:100%;">Plus de 18 ans de présence sur le secteur de Draveil et ses environs. Un interlocuteur unique, joignable directement, pour vendre ou estimer votre bien dans les meilleures conditions.</p>
+        <p class="lead" style="max-width:100%;">Plus de 18 ans de présence sur le secteur de Draveil, Soisy-sur-Seine et leurs environs. Un interlocuteur unique, joignable directement, pour vendre ou estimer votre bien dans les meilleures conditions.</p>
         <div class="about-contact">
           <a href="tel:0616127718">06 16 12 77 18</a>
           <a href="mailto:francis.fernandes@iadfrance.com">francis.fernandes@iadfrance.com</a>
@@ -378,109 +347,7 @@
   </div>
 </section>
 
-<section id="quartiers">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">À la découverte de Draveil</span>
-      <h2>Les quartiers historiques de la ville</h2>
-      <p>Chaque quartier de Draveil a sa propre histoire et son propre marché immobilier.</p>
-    </div>
-    <div class="quartiers-grid stagger">
-      <a href="la-villa.html" class="quartier-card">
-        <img src="images/la-villa-boulevard-des-ormes.jpg" alt="Quartier La Villa à Draveil">
-        <div class="qcard-caption"><h4>La Villa</h4><span>1er lotissement, bord de Seine</span></div>
-      </a>
-      <a href="mainville.html" class="quartier-card">
-        <img src="images/draveil-champrosay-grande-rue.jpg" alt="Quartier Mainville à Draveil">
-        <div class="qcard-caption"><h4>Mainville</h4><span>Berceau historique de Draveil</span></div>
-      </a>
-      <a href="champrosay.html" class="quartier-card">
-        <img src="images/draveil-eglise-1.jpg" alt="Quartier Champrosay à Draveil">
-        <div class="qcard-caption"><h4>Champrosay</h4><span>Le hameau de Delacroix et Daudet</span></div>
-      </a>
-      <a href="paris-jardins.html" class="quartier-card">
-        <img src="images/paris-jardins-chateau-facade.jpg" alt="Cité Paris-Jardins à Draveil">
-        <div class="qcard-caption"><h4>Paris-Jardins</h4><span>1ʳᵉ cité-jardin de France, 1911</span></div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section class="zones" id="secteurs">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow" style="color:var(--gold-2)">Communes voisines</span>
-      <h2>Francis intervient aussi tout autour de Draveil</h2>
-      <p>Même trame, même niveau d'accompagnement : chaque commune a sa propre estimation détaillée.</p>
-    </div>
-    <div class="zone-grid stagger">
-      <a href="https://ferfrancis91-sudo.github.io/iad-estimation-montgeron/" target="_blank" rel="noopener" class="zone-card zone-external">
-        <span class="zone-tag">Site dédié ↗</span>
-        <h4>Montgeron</h4>
-        <div class="price">3 550 €</div>
-        <div class="unit">par m² · iad-estimation-montgeron</div>
-      </a>
-      <a href="vigneux-sur-seine.html" class="zone-card">
-        <h4>Vigneux-sur-Seine →</h4>
-        <div class="price">3 100 €</div>
-        <div class="unit">par m² · page dédiée</div>
-      </a>
-      <div class="zone-card">
-        <h4>Ris-Orangis</h4>
-        <div class="price">2 300 €</div>
-        <div class="unit">par m²</div>
-      </div>
-      <div class="zone-card">
-        <h4>Juvisy-sur-Orge</h4>
-        <div class="price">3 300 €</div>
-        <div class="unit">par m²</div>
-      </div>
-      <a href="soisy-sur-seine.html" class="zone-card">
-        <h4>Soisy-sur-Seine →</h4>
-        <div class="price">3 305 €</div>
-        <div class="unit">par m² · page dédiée</div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section style="background:var(--iad-tint-2);">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">Bien plus qu'un site d'estimation</span>
-      <h2>Tout savoir sur la vie à Draveil</h2>
-      <p>Histoire, écoles, agenda et carte des repères utiles : de quoi préparer sereinement votre achat, votre vente ou votre installation.</p>
-    </div>
-    <div class="feature-grid stagger">
-      <div class="feature-card">
-        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2v20M2 12h20" stroke="white" stroke-width="2"/></svg></div>
-        <h3>Histoire &amp; qualité de vie</h3>
-        <p>Des origines préhistoriques aux quartiers d'aujourd'hui : le portrait complet de Draveil.</p>
-        <a href="histoire-qualite-de-vie.html">Découvrir →</a>
-      </div>
-      <div class="feature-card">
-        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 19V5a2 2 0 012-2h12a2 2 0 012 2v14" stroke="white" stroke-width="2"/></svg></div>
-        <h3>Écoles &amp; carte scolaire</h3>
-        <p>Toutes les écoles, collèges et lycées de Draveil, et comment connaître votre secteur.</p>
-        <a href="ecoles-carte-scolaire.html">Consulter →</a>
-      </div>
-      <div class="feature-card">
-        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="17" rx="2" stroke="white" stroke-width="2"/><path d="M3 9h18" stroke="white" stroke-width="2"/></svg></div>
-        <h3>Agenda de la ville</h3>
-        <p>Marchés, fêtes et événements municipaux, mis à jour régulièrement.</p>
-        <a href="calendrier.html">Voir l'agenda →</a>
-      </div>
-      <div class="feature-card">
-        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 22s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z" stroke="white" stroke-width="2"/></svg></div>
-        <h3>Carte interactive</h3>
-        <p>Écoles, lieux de culte, administrations et gare : repérez-vous en un clic.</p>
-        <a href="carte-interactive.html">Explorer la carte →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="etapes">
+<section id="etapes" style="background:var(--iad-tint-2);">
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow">Comment ça marche</span>
@@ -500,7 +367,7 @@
     <div class="propertips-card reveal">
       <div class="propertips-text">
         <span class="eyebrow" style="color:var(--gold);">Propertips by iad</span>
-        <h2>Vous connaissez quelqu'un qui vend ou achète à Draveil ?</h2>
+        <h2>Vous connaissez quelqu'un qui vend ou achète à Soisy ?</h2>
         <p>Recommandez Francis à votre entourage et touchez <strong>jusqu'à 500 € en moyenne</strong> une fois la vente finalisée.</p>
         <ol class="pt-steps">
           <li><span>1</span> Vous connaissez un vendeur ou un acheteur</li>
@@ -524,15 +391,16 @@
       <h2>Ce qu'en disent les vendeurs du secteur</h2>
     </div>
     <div class="testi-grid stagger">
-      <div class="testi"><div class="stars">★★★★★</div><p>"Estimation rapide et honnête, sans survente. Francis connaît vraiment le quartier."</p><div class="who"><div class="avatar">MC</div><div><strong>M. et Mme C.</strong><span>Vente à Draveil</span></div></div></div>
+      <div class="testi"><div class="stars">★★★★★</div><p>"Un accompagnement clair du début à la fin, on sentait l'appui d'un vrai réseau derrière."</p><div class="who"><div class="avatar">JD</div><div><strong>J. Dubois</strong><span>Vente à Soisy-sur-Seine</span></div></div></div>
+      <div class="testi"><div class="stars">★★★★★</div><p>"Estimation rapide et honnête, sans survente. Francis connaît vraiment le secteur."</p><div class="who"><div class="avatar">MC</div><div><strong>M. et Mme C.</strong><span>Vente à Draveil</span></div></div></div>
       <div class="testi"><div class="stars">★★★★★</div><p>"Disponible, réactif, et un vrai suivi jusqu'à la signature. Rien à redire."</p><div class="who"><div class="avatar">SL</div><div><strong>S. Lefèvre</strong><span>Vente à Vigneux-sur-Seine</span></div></div></div>
-      <div class="testi"><div class="stars">★★★★★</div><p>"Un accompagnement clair du début à la fin, on sentait l'appui d'un vrai réseau derrière."</p><div class="who"><div class="avatar">JD</div><div><strong>J. Dubois</strong><span>Vente à Draveil</span></div></div></div>
     </div>
   </div>
 </section>
+
 <section id="contact">
   <div class="cta-final reveal-scale">
-    <h2>Prêt à connaître la vraie valeur de votre bien à Draveil ?</h2>
+    <h2>Prêt à connaître la vraie valeur de votre bien à Soisy-sur-Seine ?</h2>
     <p>Estimation gratuite, sans engagement, réalisée par un conseiller iad présent sur votre secteur.</p>
     <form id="leadForm" class="lead-form">
       <div class="lead-row">
@@ -540,7 +408,7 @@
         <input type="tel" id="tel" placeholder="Votre téléphone" required>
       </div>
       <div class="lead-row">
-        <input type="text" id="ville" placeholder="Votre commune" value="Draveil">
+        <input type="text" id="ville" placeholder="Votre commune" value="Soisy-sur-Seine">
         <select id="type">
           <option value="">Type de bien</option>
           <option value="Maison">Maison</option>
@@ -571,6 +439,7 @@
     </p>
   </div>
 </section>
+
 <footer>
   <div class="wrap">
     <div class="foot-grid">
@@ -579,30 +448,21 @@
           <img src="images/iad-logo.png" alt="iad" class="logo-img">
           <div>iad <small style="color:rgba(255,255,255,.5)">FRANCIS FERNANDES</small></div>
         </div>
-        <p style="max-width:260px;">Conseiller immobilier indépendant du réseau iad, au service de Draveil, de ses quartiers historiques et des communes voisines.</p>
-      </div>
-      <div>
-        <h4>Draveil</h4>
-        <a href="index.html">Accueil</a>
-        <a href="la-villa.html">La Villa</a>
-        <a href="paris-jardins.html">Paris-Jardins</a>
-        <a href="mainville.html">Mainville</a>
-        <a href="champrosay.html">Champrosay</a>
-      </div>
-      <div>
-        <h4>Communes voisines</h4>
-        <a href="https://ferfrancis91-sudo.github.io/iad-estimation-montgeron/" target="_blank" rel="noopener">Montgeron (site dédié) ↗</a>
-        <a href="vigneux-sur-seine.html">Vigneux-sur-Seine</a>
-        <a href="soisy-sur-seine.html">Soisy-sur-Seine</a>
-        <span class="disabled">Ris-Orangis</span>
-        <span class="disabled">Juvisy-sur-Orge</span>
+        <p style="max-width:280px;">Conseiller immobilier indépendant du réseau iad, au service de Draveil, Soisy-sur-Seine et leurs environs.</p>
       </div>
       <div>
         <h4>Le site</h4>
-        <a href="histoire-qualite-de-vie.html">Histoire & vie locale</a>
-        <a href="ecoles-carte-scolaire.html">Écoles & carte scolaire</a>
-        <a href="calendrier.html">Agenda de la ville</a>
-        <a href="carte-interactive.html">Carte interactive</a>
+        <a href="index.html">Accueil (Draveil)</a>
+        <a href="vigneux-sur-seine.html">Vigneux-sur-Seine</a>
+        <a href="https://ferfrancis91-sudo.github.io/iad-estimation-montgeron/" target="_blank" rel="noopener">Montgeron (site dédié) ↗</a>
+        <a href="histoire-qualite-de-vie.html">Histoire &amp; vie locale</a>
+        <a href="ecoles-carte-scolaire.html">Écoles &amp; carte scolaire</a>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <a href="#simulateur">Estimation gratuite</a>
+        <a href="#propertips">Recommandation Propertips</a>
+        <a href="https://www.iadfrance.fr/" target="_blank">Réseau iad France</a>
       </div>
       <div>
         <h4>Contact</h4>
@@ -617,6 +477,7 @@
     </div>
   </div>
 </footer>
+
 <div class="float-stack">
   <a href="https://propertips.com/signup.php?lang=fr_FR&code_invitation=W2X1AR1179351" target="_blank" rel="noopener" class="pt-float" aria-label="S'inscrire sur Propertips">
     <span class="float-label">Gagnez 500 € de parrainage</span>
@@ -629,33 +490,18 @@
 </div>
 
 <script>
-  const communePrices = {"3150":"Draveil","3100":"Vigneux-sur-Seine","2300":"Ris-Orangis","3300":"Juvisy-sur-Orge","3305":"Soisy-sur-Seine"};
-  const communeSelect = document.getElementById('commune');
   const surfaceInput = document.getElementById('surface');
   const resultatBas = document.getElementById('resultat-bas');
   const resultatHaut = document.getElementById('resultat-haut');
-  const simNoteText = document.getElementById('sim-note-text');
-
-  function toEuro(n){
-    return (Math.round(n/100)*100).toLocaleString('fr-FR') + " €";
-  }
+  function toEuro(n){ return (Math.round(n/100)*100).toLocaleString('fr-FR') + " €"; }
   function updateEstimate(){
-    const prix = parseInt(communeSelect.value, 10);
-    const communeNom = communePrices[communeSelect.value] || 'Draveil';
     const surface = parseFloat(surfaceInput.value);
-    simNoteText.textContent = "Cette fourchette est indicative et dépend de l'état du bien, du terrain et de l'exposition — basée sur les prix moyens constatés à " + communeNom + " (≈ " + prix.toLocaleString('fr-FR') + " €/m²), une visite reste nécessaire pour un chiffrage précis.";
-    if(!surface || surface <= 0){
-      resultatBas.textContent = "—";
-      resultatHaut.textContent = "—";
-      return;
-    }
-    const median = prix * surface;
+    if(!surface || surface <= 0){ resultatBas.textContent = "—"; resultatHaut.textContent = "—"; return; }
+    const median = 3305 * surface;
     resultatBas.textContent = toEuro(median * 0.90);
     resultatHaut.textContent = toEuro(median * 1.10);
   }
-  communeSelect.addEventListener('change', updateEstimate);
   surfaceInput.addEventListener('input', updateEstimate);
-  updateEstimate();
 
   const revealEls = document.querySelectorAll('.reveal, .reveal-scale, .stagger');
   if('IntersectionObserver' in window){
@@ -663,7 +509,7 @@
       entries.forEach(entry=>{
         if(entry.isIntersecting){ entry.target.classList.add('in-view'); io.unobserve(entry.target); }
       });
-    }, {threshold:.12});
+    }, {threshold:.15});
     revealEls.forEach(el=>io.observe(el));
   } else {
     revealEls.forEach(el=>el.classList.add('in-view'));
@@ -677,7 +523,7 @@
       var leadData = {
         nom: document.getElementById('nom').value,
         ville: document.getElementById('ville').value,
-        adresse: '',
+        adresse: surfaceInput.value ? surfaceInput.value + ' m²' : '',
         type: document.getElementById('type').value,
         delai: document.getElementById('delai').value,
         tel: document.getElementById('tel').value,
